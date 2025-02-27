@@ -7,13 +7,13 @@ STATUS_CHOICES = (
         ("cooking", "cooking"),
         ("served", "served"))
 # Create your models here.
-class Tables(models.Model):
+class CafeTables(models.Model):
     table_number = models.IntegerField()
     cafe_space_position = models.CharField(max_length=50,blank=False,null=False)
     current_order = models.IntegerField()
 
 class Orders(models.Model):
-    table = models.ForeignKey(Tables,on_delete=models.DO_NOTHING)
+    table = models.ForeignKey(CafeTables,on_delete=models.DO_NOTHING)
     customer = models.ForeignKey(Customers,on_delete=models.CASCADE)
     status = models.CharField(max_length=100,blank=False,null=False,choices=STATUS_CHOICES,default="ongoing")
     timestamp = models.DateTimeField(auto_now_add=True)
