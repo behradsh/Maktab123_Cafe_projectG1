@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order</title>
+
+    {% block title %}
+        order
+    {% endblock %}    
+</head>
+<body>
+    <div class="links" style="color: cornflowerblue; ">
+        <a href="order_detail.html">
+            order_detail
+        </a>
+    </div>
+    <div class="main_body" style="background-color: brown; display: flexbox; height: fit-content; width: fit-content; color: chocolate; font-family: Arial, Helvetica, sans-serif;">
+        {% block content%}
+            {{order}}
+        
+            {% csrf_token %}
+            {{form.as_p}}
+        {% endblock %}    
+
+    </div>
+    
+</body>
+</html>
