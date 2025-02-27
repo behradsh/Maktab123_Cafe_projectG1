@@ -1,0 +1,107 @@
+[
+  {
+    "model": "menu.category",
+    "pk": 1,
+    "fields": {
+      "title": "Coffee"
+    }
+  },
+  {
+    "model": "menu.category",
+    "pk": 2,
+    "fields": {
+      "title": "Dessert"
+    }
+  },
+  {
+    "model": "menu.category",
+    "pk": 3,
+    "fields": {
+      "title": "Breakfast"
+    }
+  },
+  {
+    "model": "menu.menuitems",
+    "pk": 1,
+    "fields": {
+      "name": "Espresso",
+      "price": "2.50",
+      "category": 1,
+      "discount": 10,
+      "serving_time_period": 15,
+      "estimated_cooking_time": 5
+    }
+  },
+  {
+    "model": "menu.menuitems",
+    "pk": 2,
+    "fields": {
+      "name": "Cappuccino",
+      "price": "3.75",
+      "category": 1,
+      "discount": 5,
+      "serving_time_period": 20,
+      "estimated_cooking_time": 7
+    }
+  },
+  {
+    "model": "menu.menuitems",
+    "pk": 3,
+    "fields": {
+      "name": "Cheesecake",
+      "price": "4.99",
+      "category": 2,
+      "discount": 5,
+      "serving_time_period": 30,
+      "estimated_cooking_time": 10
+    }
+  },
+  {
+    "model": "menu.menuitems",
+    "pk": 4,
+    "fields": {
+      "name": "Brownie",
+      "price": "3.50",
+      "category": 2,
+      "discount": 7,
+      "serving_time_period": 25,
+      "estimated_cooking_time": 8
+    }
+  },
+  {
+    "model": "menu.menuitems",
+    "pk": 5,
+    "fields": {
+      "name": "Pancakes",
+      "price": "6.00",
+      "category": 3,
+      "discount": 15,
+      "serving_time_period": 40,
+      "estimated_cooking_time": 12
+    }
+  },
+  {
+    "model": "menu.menuitems",
+    "pk": 6,
+    "fields": {
+      "name": "Omelette",
+      "price": "5.50",
+      "category": 3,
+      "discount": 10,
+      "serving_time_period": 35,
+      "estimated_cooking_time": 10
+    }
+  },
+  {
+    "model": "menu.menuitems",
+    "pk": 7,
+    "fields": {
+      "name": "French Toast",
+      "price": "6.75",
+      "category": 3,
+      "discount": 12,
+      "serving_time_period": 45,
+      "estimated_cooking_time": 15
+    }
+  }
+]

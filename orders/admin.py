@@ -19,4 +19,4 @@ class OrderdetailAdmin(admin.ModelAdmin):
 @admin.register(receipts)
 class ReceiptAdmin(admin.ModelAdmin):
     list_display = ("order","total_price","final_price","timestamp")
-    list_filter = ["order","total_price","final_price"]       
+    list_filter = ["order","total_price","final_price"]

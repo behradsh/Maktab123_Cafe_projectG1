@@ -1,8 +1,8 @@
 from django.shortcuts import render,redirect
 from django.views import View
 from django.contrib.auth.decorators import login_required
-from .models import Orders,OrdersDetails,Tables,Receipts
-from .forms import OrderDetailForm,OrderForm,TableForm,ReceiptForm
+from .models import Orders,OrdersDetails,Receipts
+from .forms import OrderDetailForm,OrderForm,ReceiptForm
 from django.views.generic import UpdateView,DeleteView
 from django.shortcuts import get_object_or_404
 
@@ -11,6 +11,7 @@ class OrderDetail(View):
         context = get_object_or_404(OrdersDetails,id=kwargs)
         return render(request,'order_detail.html',context=context)
 
+    @login_required
     def post(self,request,*args,**kwargs):
         form = OrderDetailForm(request.POST)
         if form.is_valid():
@@ -80,29 +81,6 @@ class DeleteReceipt(DeleteView):
     model = Receipts
     template_name = 'delete_receipt.html'    
 
-class Table(View):
-    def get(self,request,*args,**kwargs):
-        context = get_object_or_404(Tables,id=kwargs)
-        return render(request,'table.html',context=context)
-
-    def post(self,request,*args,**kwargs):
-        form = TableForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('order_detail')
-        else :
-            sample_form = TableForm()
-            return render(request,'table.html',context={"form":sample_form})
-
-class OrderDetailUpdate(UpdateView): 
-    model = Tables
-    form = TableForm
-    template_name = 'table.html'
-
-
-class DeleteOrderDetail(DeleteView):   
-    model = Tables
-    template_name = 'table_delete.html'    
 
 
 
