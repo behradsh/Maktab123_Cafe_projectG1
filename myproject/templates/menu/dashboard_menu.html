@@ -80,6 +80,7 @@
             <li><a class="dropdown-item" href="#" data-category="seafood">Seafood</a></li>
           </ul>
         </div>
+        <a href="{% url 'add_menu_item' %}" class="btn btn-success add-product-btn">Add New Item</a>
         <form class="d-flex" role="search">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
           <button class="btn btn-outline-success" type="button">Search</button>
@@ -95,8 +96,8 @@
               <p class="card-text">{{ item.description }}</p>
               <p class="text-success fw-bold">price : {{ item.price }} $</p>
               <div class="btn-group">
-                <a href="{% url 'item_detail' item.id %}" class="btn btn-info">item detail</a>
-                <a href="{% url 'add_to_cart' item.id %}" class="btn btn-warning">add to cart</a>
+                <a href="{% url 'edit_menu_item' item.id %}" class="btn btn-primary">Edit</a>
+                <a href="{% url 'delete_menu_item' item.id %}" class="btn btn-danger">Delete</a>
               </div>
             </div>
           </div>

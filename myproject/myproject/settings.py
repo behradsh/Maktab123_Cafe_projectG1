@@ -14,8 +14,8 @@ from pathlib import Path
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = str(Path(__file__).resolve().parent.parent)
-
+# BASE_DIR = str(Path(__file__).resolve().parent.parent)
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
@@ -83,9 +83,9 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'cafeprojectgroupdb',
-        'USER': 'postgres',
-        'PASSWORD': 'behrad',
+        'NAME': 'cafe_project_db',
+        'USER': 'farzad3467',
+        'PASSWORD': 'FARZAD228',
         'HOST': 'localhost',
         'PORT': '5432'
     }
@@ -125,13 +125,21 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = os.path.join(BASE_DIR, 'static/')
+# STATIC_URL = os.path.join(BASE_DIR, '/static/')
+STATIC_URL = 'static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static/')
+    os.path.join(BASE_DIR, 'static')
 ]
 # STATIC_ROOT = os.path.join(BASE_DIR,'static')
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'static/media')
+
+# STATIC_ROOT = os.path.join(BASE_DIR,'static')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/media')
+
+
 MEDIA_URL = '/media/'
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
